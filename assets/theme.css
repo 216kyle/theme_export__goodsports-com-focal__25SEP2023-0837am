@@ -15233,3 +15233,11 @@ shopify-payment-terms {
     display: none; !important
   }
 }
+
+.customLabel {
+display: block;
+    font-family: var(--heading-font-family);
+    font-style: var(--heading-font-style);
+    color: rgb(var(--heading-color));
+    text-transform: var(--heading-text-transform);
+}

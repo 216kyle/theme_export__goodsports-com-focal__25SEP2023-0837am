@@ -84,7 +84,7 @@
           <input type="hidden" name="options[prefix]" value="last">
           <input type="hidden" name="options[unavailable_products]" value="{{ settings.search_unavailable_products }}">
 
-          <button class="main-search__submit tap-area" type="submit">{%- render 'icon' with 'header-search' -%}</button>
+          <button title="Main Search Submit" class="main-search__submit tap-area" type="submit">{%- render 'icon' with 'header-search' -%}</button>
           <input class="main-search__input input__field" type="text" name="q" autocomplete="off" autocorrect="off" aria-label="{{ 'search.general.title' | t }}" placeholder="{{ 'search.general.search_placeholder' | t }}" value="{{ search.terms | escape }}">
         </form>
 
@@ -291,7 +291,7 @@
           <input type="hidden" name="options[prefix]" value="last">
           <input type="hidden" name="options[unavailable_products]" value="{{ settings.search_unavailable_products }}">
 
-          <button class="main-search__submit tap-area" type="submit">{%- render 'icon' with 'header-search' -%}</button>
+          <button title="Header Search Submit" class="main-search__submit tap-area" type="submit">{%- render 'icon' with 'header-search' -%}</button>
           <input class="main-search__input input__field" type="text" name="q" autocomplete="off" autocorrect="off" aria-label="{{ 'search.general.title' | t }}" placeholder="{{ 'search.general.search_placeholder' | t }}">
         </form>
       </div>

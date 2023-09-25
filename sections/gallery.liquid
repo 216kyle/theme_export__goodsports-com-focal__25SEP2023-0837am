@@ -44,7 +44,7 @@
         {%- endif -%}
 
         {%- if section.settings.title != blank -%}
-          <h3 class="heading h2">{{ section.settings.title | escape }}</h3>
+          <div class="heading h2">{{ section.settings.title | escape }}</div>
         {%- endif -%}
       </header>
     {%- endif -%}
@@ -66,7 +66,7 @@
                     {%- assign tablet_size = 520 | times: block.settings.image.aspect_ratio | ceil -%}
                     {%- assign desktop_size = 600 | times: block.settings.image.aspect_ratio | ceil -%}
 
-                    <img loading="lazy" sizes="(max-width: 740px) {{ mobile_size }}px, (max-width: 999px) {{ tablet_size }}px, {{ desktop_size }}px" class="gallery__image" {% render 'image-attributes', image: block.settings.image, sizes: '300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000' %}>
+                    <img alt="{{ block.settings.image.alt | escape }}" loading="lazy" sizes="(max-width: 740px) {{ mobile_size }}px, (max-width: 999px) {{ tablet_size }}px, {{ desktop_size }}px" class="gallery__image" {% render 'image-attributes', image: block.settings.image, sizes: '300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000' %}>
                   {%- else -%}
                     {{- 'image' | placeholder_svg_tag: 'gallery__image gallery__image placeholder-background' -}}
                   {%- endif -%}
