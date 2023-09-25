@@ -360,7 +360,7 @@
 
                         <collapsible-content id="cart-note" class="collapsible" {% if block.settings.open_by_default %}open{% endif %}>
                           <div class="cart__order-note">
-                            <textarea is="cart-note" aria-owns="order-note-toggle" name="note" class="input__field input__field--textarea" rows="3" placeholder="{{ 'cart.general.order_note_placeholder' | t }}" aria-label="{{ 'cart.general.order_note' | t | escape }}">{{ cart.note }}</textarea>
+                            <textarea is="cart-note" name="note" class="input__field input__field--textarea" rows="3" placeholder="{{ 'cart.general.order_note_placeholder' | t }}" aria-label="{{ 'cart.general.order_note' | t | escape }}">{{ cart.note }}</textarea>
                           </div>
                         </collapsible-content>
                       </div>
