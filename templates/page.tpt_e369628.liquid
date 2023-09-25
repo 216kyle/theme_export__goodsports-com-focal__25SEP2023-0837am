@@ -1,0 +1,282 @@
+<script>window.__tpt_full_page = 1</script><script class='tpt_dynamic'>function dynamicAttach(itemId, containerId, callback){
+    console.log(itemId, containerId);
+    var slt= '.spb-item.type_actual_statement.spb-item-id_'+itemId;
+    var targetElement = document.querySelector(slt);
+    var containerElement = document.querySelector('.'+containerId);
+    console.log(targetElement, containerElement);
+    if(targetElement && containerElement && !targetElement.innerHTML.length){
+        console.log('Found container element');
+        var tpt_rerun = containerElement.querySelectorAll('script.tpt_rerun, script.tpt_inject_script');
+        targetElement.innerHTML = containerElement.innerHTML;
+        tpt_rerun.forEach(function(t){Function(t.innerText)()});
+        if (callback && callback.call){
+            callback.call('');
+        }
+    }else if (targetElement && containerElement && targetElement.innerHTML.length){
+        console.log('Already attached', slt);
+    }
+    if(!window._tapita_ssr_ijt_obj){
+        window._tapita_ssr_ijt_obj = {};
+    }
+    window._tapita_ssr_ijt_obj[slt] = function(anything){return dynamicAttach(itemId, containerId, anything)};
+}</script>
+<script>window._issolate_tapita_hamburger = true;</script>
+
+        <style>
+                .type_actual_statement{width: 100%}
+        </style>
+        {% assign content = page.metafields.tapita["pgt-e369628"] %}
+        
+                <script>
+                    function tptmakeidprv(length) {
+                        var result           = "";
+                        var characters       = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                        var charactersLength = characters.length;
+                        for ( var i = 0; i < length; i++ ) {
+                            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                        }
+                        return result;
+                    }
+                    var tptPRBId = tptmakeidprv(50);
+                    function addTapitaTMF() {
+                        var tpPBCtn = document.getElementsByClassName("smpb-container");
+                        if (tpPBCtn.length && tpPBCtn[0] && tpPBCtn[0].parentElement &&
+                            tpPBCtn[0].parentElement.parentElement && !document.getElementById(tptPRBId)) {
+                            var tptTmt = document.createElement("a");
+                            tptTmt.onclick = function() { window.location.href = 'https://apps.shopify.com/tapita-page-builder?utm_source=customer_pages&utm_medium=referral&utm_campaign=trademark'; };
+                            tptTmt.setAttribute("id", tptPRBId);
+                            tptTmt.style.margin = "10px auto";
+                            tptTmt.style.display = "block";
+                            tptTmt.style.width = "200px";
+                            tptTmt.style.zIndex = 9999999; 
+                            tptTmt.style.position = "relative"; 
+                            var tptImg = document.createElement("img");
+                            tptImg.src = "data:image/png;base64,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";
+                            tptImg.style.height = "46px";
+                            tptImg.style.width = "200px";
+                            tptTmt.appendChild(tptImg);  
+
+                            var newcssTagStyle = "#" + tptPRBId + "{display: block !important;}";
+                            var styleTag = document.createElement("style");
+                            styleTag.type = "text/css";
+                            tpPBCtn[0].appendChild(styleTag);  
+                            styleTag.appendChild(document.createTextNode(newcssTagStyle));
+                            tpPBCtn[0].parentElement.appendChild(tptTmt);  
+                        } else {
+                            window.setTimeout(addTapitaTMF, 1000);
+                        }
+                    }
+                    addTapitaTMF();
+                </script>
+            
+        <div id="tapita-page-main-content" style="min-height: 100vh; display: block">
+          <h1 class="tapita-placeholder" style="display:none;">
+            {{ page.title | escape }}
+            "", 1
+          </h1>
+        </div>
+
+        
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-51' style='opacity: 0'><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8254.141953691389!2d-98.59355112267878!3d29.561822134658854!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9c2fdb0e5fb28b!2sGood%20Sports%20Outdoor%20Outfitters!5e0!3m2!1sen!2sus!4v1660055572613!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                                <script>
+                                var timmerTime = (window && window.screen && window.screen.width && window.screen.width < 1024) ? 1000: 300;
+                                    var timer_51_counter = 0;
+                                    var timer_51 = setInterval(function () {
+                                    try{
+                                        timer_51_counter++;
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_51');
+                                        let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-51');
+                                        if (target_c && !target_c.innerHTML) {
+                                            if(self_c.length > 0 ){
+                                                target_c.style.setProperty('display', 'block');
+                                                target_c.style.setProperty('overflow', 'clip');
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                self_c[0].style.setProperty('opacity', '1');
+                                                window.tpb_srsappended_{{ident}}51 = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}51) {
+                                                target_c.style.setProperty('display', 'block');
+                                                target_c.style.setProperty('overflow', 'clip');
+                                                window.tpb_srsappended_{{ident}}51.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}}51);
+                                            }
+                                        } else if (!target_c) {
+                                            if((self_c.length > 0) && (timer_51_counter > 5)){
+                                                self_c[0].style.setProperty('display', 'none');
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e);
+                                        clearInterval(timer_51);
+                                    }
+                                }, timmerTime);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-64447' style='opacity: 0'><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13880.133294876376!2d-98.5879683!3d29.5736337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4dc6547aace8bdb7!2sGood%20Sports%20Outdoors%20Outlet!5e0!3m2!1sen!2sus!4v1660056209036!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                                <script>
+                                var timmerTime = (window && window.screen && window.screen.width && window.screen.width < 1024) ? 1000: 300;
+                                    var timer_64447_counter = 0;
+                                    var timer_64447 = setInterval(function () {
+                                    try{
+                                        timer_64447_counter++;
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_64447');
+                                        let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-64447');
+                                        if (target_c && !target_c.innerHTML) {
+                                            if(self_c.length > 0 ){
+                                                target_c.style.setProperty('display', 'block');
+                                                target_c.style.setProperty('overflow', 'clip');
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                self_c[0].style.setProperty('opacity', '1');
+                                                window.tpb_srsappended_{{ident}}64447 = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}64447) {
+                                                target_c.style.setProperty('display', 'block');
+                                                target_c.style.setProperty('overflow', 'clip');
+                                                window.tpb_srsappended_{{ident}}64447.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}}64447);
+                                            }
+                                        } else if (!target_c) {
+                                            if((self_c.length > 0) && (timer_64447_counter > 5)){
+                                                self_c[0].style.setProperty('display', 'none');
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e);
+                                        clearInterval(timer_64447);
+                                    }
+                                }, timmerTime);
+                                </script>
+                            
+        <div class="rte">
+            <script>
+                try {
+                    var _tpt_insigna = "fd19b93c086de1dd7b876066220c13ad";
+                    if(!globalThis._tpt_pbds){
+                        globalThis._tpt_pbds = [];
+                    }
+                    document.querySelectorAll("meta[name='description']").forEach(function(t){t.setAttribute("data-react-helmet",true)});
+                }catch(e){
+                    console.warn(e);
+                }
+                var tapitacss = `#shopify-section-tapita-main-page, #shopify-section-tapita-main-home { min-height: 100vh; } .main.content { max-width: unset; } .spb-item-root {width: 100%;} h1.main-page-title.page-title {display: none;} .spb-item.type_text {overflow-y: hidden;} `;
+                var tapitahead = document.head || document.getElementsByTagName("head")[0];
+                var tapitastyle = document.createElement("style");
+
+                tapitastyle.type = "text/css";
+                if (tapitastyle.styleSheet){
+                    tapitastyle.styleSheet.cssText = tapitacss;
+                } else {
+                    tapitastyle.appendChild(document.createTextNode(tapitacss));
+                }
+                tapitastyle.class="tapita-custom-css";
+                 
+                var tapitajs = ``;
+                var tapitascript = document.createElement("script");
+                tapitascript.appendChild(document.createTextNode(tapitajs));
+                tapitascript.defer = true;
+                tapitascript.class="tapita-custom-css";
+
+                tapitahead.appendChild(tapitastyle);
+                tapitahead.appendChild(tapitascript);
+                
+            </script>
+            
+            {{ 'tapita-cdn-assets-1.6.11.js' | asset_url | script_tag }}
+             
+            <script defer>
+                var tapita_counter = 0;
+                var possibleMainTargetQuery = [
+                    
+                    "#tapita-page-main-content",
+                    ".normal_main_content",
+                    "#MainContent",
+                    "shopify-section-tapita-main-page",
+                    "shopify-section-tapita-main-home",
+                    "main",
+                ];
+              
+                var currentMain = null;
+                for (const selector of possibleMainTargetQuery) {
+                    currentMain = document.querySelector(selector);
+                    if(currentMain){
+                        break;
+                    }
+                }
+                var injector = setInterval(function () {
+                    var idToRender = false;
+                    var mainTarget = null;
+                    for (const selector of possibleMainTargetQuery) {
+                        mainTarget = document.querySelector(selector);
+                        if(mainTarget){
+                            break;
+                        }
+                    }
+                    if(currentMain && currentMain.id !=="MainContent"){
+                        currentMain.id = "MainContentTapita";
+                        idToRender = "MainContentTapita";
+                    }
+                    
+                    if (!idToRender)
+                        return;
+
+                    tapita_counter += 1;
+                    if (globalThis.PageBuilderComponent) {
+                        var tapitaSections = document.querySelectorAll(".tapitaSection, .spb-customerhtml-serverrender");
+                        currentMain = null;
+                        function tptPBD(){
+                            PageBuilderComponent.renderForIdWithProps(idToRender, {
+                            endPoint: "https://tapita.io/pb/graphql/",
+                            mode: "shopify",
+                            lazyloadPlaceHolder: "",
+                            formatMessage: globalThis._rms_translate,
+                            _translateParagraph: true,
+                            _translateSEO: true,
+                            _translatePlaceholder: true,
+                            pageData: {"url_path":"\/contact-the-team","original_url_path":"\/contact-the-team","type_id":0,"priority":20,"entity_id":9750,"name":"Contact The Team","status":1,"masked_id":"4530WNuh0RGlMK0o2gsMPB5P1660055520","custom_css":" .form-builder-artifact input {width: 100%}","custom_js":null,"keywords":"Contact","title":"Contact the Good Sports Team","desc":"","is_rtl":0,"storeview_visibility":"","publish_items":"[{\"entity_id\":4,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100,\\\"heightPixel\\\":\\\"375\\\",\\\"marginBottom\\\":30}\",\"data\":\"{\\\"showSliderIndicator\\\":\\\"1\\\",\\\"showSliderNavBtn\\\":\\\"1\\\",\\\"sliderAutoSlide\\\":0,\\\"sliderInfiniteLoop\\\":\\\"1\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_VkZTRGUxNjYwMDYzODgxODMz_81833\",\"class_name\":\"\",\"type\":\"slider\",\"visibility\":\"\",\"sort_order\":20,\"parent_id\":45,\"storeview_visibility\":0},{\"entity_id\":3,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100,\\\"heightPixel\\\":\\\"375\\\",\\\"marginBottom\\\":30}\",\"data\":\"{\\\"showSliderIndicator\\\":1,\\\"showSliderNavBtn\\\":\\\"1\\\",\\\"sliderAutoSlide\\\":0,\\\"sliderInfiniteLoop\\\":\\\"1\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_Z0d5bWsxNjYwMDU4ODY4NTg1_68585\",\"class_name\":\"\",\"type\":\"slider\",\"visibility\":\"\",\"sort_order\":30,\"parent_id\":44,\"storeview_visibility\":0},{\"entity_id\":1,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"fontFamily\\\":\\\"sans-serif\\\",\\\"fontWeight\\\":900,\\\"borderColor\\\":\\\"#eee\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderBottomWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"lineHeight\\\":\\\"38px\\\",\\\"textAlign\\\":\\\"center\\\",\\\"maxWidth\\\":\\\"1000px\\\",\\\"color\\\":\\\"#ffffff\\\",\\\"fontSize\\\":\\\"38px\\\",\\\"paddingBottom\\\":0}\",\"data\":\"{\\\"textTag\\\":\\\"h1\\\"}\",\"name\":\"Reach Out or Come On By\",\"tag_id\":\"pbi_V2hPMGMxNjYwMDU1OTI1NzA2_25706\",\"class_name\":\"\",\"type\":\"text\",\"visibility\":\"\",\"sort_order\":40,\"parent_id\":5,\"storeview_visibility\":0},{\"entity_id\":5,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":100,\\\"paddingBottom\\\":100,\\\"paddingLeft\\\":\\\"15px\\\",\\\"paddingRight\\\":\\\"15px\\\",\\\"minHeight\\\":100,\\\"justifyContent\\\":\\\"center\\\",\\\"backgroundImage\\\":\\\"url(https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660058361251\\\\\\\/32b91118-4a22-48fe-a962-bfa3c58a52be.jpg)\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_aUZNZ1kxNjYwMDU4MDYwOTY0_60964\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":50,\"parent_id\":0,\"storeview_visibility\":0},{\"entity_id\":7,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"fontFamily\\\":\\\"inherit\\\",\\\"fontWeight\\\":900,\\\"borderColor\\\":\\\"#eee\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderBottomWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"lineHeight\\\":\\\"34px\\\",\\\"fontSize\\\":\\\"32px\\\"}\",\"data\":\"{\\\"textTag\\\":\\\"h1\\\"}\",\"name\":\"GOOD SPORTS MAIN STORE\",\"tag_id\":\"pbi_elNVaEgxNjYwMDU3OTkzNzUw_93750\",\"class_name\":\"\",\"type\":\"text\",\"visibility\":\"\",\"sort_order\":60,\"parent_id\":44,\"storeview_visibility\":0},{\"entity_id\":2,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"fontFamily\\\":\\\"inherit\\\",\\\"fontWeight\\\":900,\\\"borderColor\\\":\\\"#eee\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderBottomWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"lineHeight\\\":\\\"34px\\\",\\\"fontSize\\\":\\\"32px\\\"}\",\"data\":\"{\\\"textTag\\\":\\\"h1\\\"}\",\"name\":\"GOOD SPORTS OUTLET\",\"tag_id\":\"pbi_V2hPMGMxNjYwMDU1OTI1NzA2_25706\",\"class_name\":\"\",\"type\":\"text\",\"visibility\":\"\",\"sort_order\":70,\"parent_id\":45,\"storeview_visibility\":0},{\"entity_id\":41,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":\\\"20px\\\",\\\"paddingBottom\\\":\\\"20px\\\",\\\"paddingLeft\\\":\\\"15px\\\",\\\"paddingRight\\\":\\\"15px\\\",\\\"minHeight\\\":100,\\\"justifyContent\\\":\\\"center\\\",\\\"display\\\":\\\"grid\\\",\\\"columnGap\\\":\\\"15px\\\",\\\"rowGap\\\":\\\"15px\\\",\\\"gridTemplateColumns\\\":\\\"1fr 1fr\\\",\\\"m_gridTemplateColumns\\\":\\\"1fr\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"t_maxWidth\\\":\\\"1024px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_enNSSEcxNjYwMDU1OTE1Njk4_15698\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":80,\"parent_id\":0,\"storeview_visibility\":0},{\"entity_id\":44,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":100}\",\"data\":null,\"name\":\"\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":90,\"parent_id\":41,\"storeview_visibility\":0},{\"entity_id\":45,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":100}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_OTlpdG4xNjYwMDU2MDU2NzQw_56740\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":100,\"parent_id\":41,\"storeview_visibility\":0},{\"entity_id\":47,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"borderBottomWidth\\\":\\\"1px\\\",\\\"borderColor\\\":\\\"#eee\\\",\\\"borderWidth\\\":\\\"1px\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"fontFamily\\\":\\\"roboto\\\"}\",\"data\":\"{\\\"paragraphContent\\\":\\\"<p><span style=\\\\\\\"font-size: 16px;\\\\\\\"><strong>ADDRESS :&nbsp;<\\\\\\\/strong><\\\\\\\/span>12730 IH-10 @ De Zavala, San Antonio, TX 78230<\\\\\\\/p><p><strong>LOCAL PHONE :&nbsp;<\\\\\\\/strong><a href=\\\\\\\"tel:2106940881\\\\\\\">(210) 694-0881<\\\\\\\/a><\\\\\\\/p><p><strong>TOLL FREE :&nbsp;<\\\\\\\/strong><a href=\\\\\\\"tel:8774431951\\\\\\\">(877) 443-1951<\\\\\\\/a><\\\\\\\/p><p><strong>EMAIL :&nbsp;<\\\\\\\/strong><a href=\\\\\\\"mailto:goodsports@goodsports.com\\\\\\\" target=\\\\\\\"_self\\\\\\\">goodsports@goodsports.com<\\\\\\\/a><\\\\\\\/p>\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_ZVdXMXgxNjYwMDU2MDA3NjU3_07658\",\"class_name\":\"\",\"type\":\"paragraph\",\"visibility\":\"\",\"sort_order\":110,\"parent_id\":44,\"storeview_visibility\":0},{\"entity_id\":48,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"borderBottomWidth\\\":\\\"1px\\\",\\\"borderColor\\\":\\\"#eee\\\",\\\"borderWidth\\\":\\\"1px\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"fontFamily\\\":\\\"roboto\\\"}\",\"data\":\"{\\\"paragraphContent\\\":\\\"<p><span style=\\\\\\\"font-size: 16px;\\\\\\\"><strong>ADDRESS :&nbsp;<\\\\\\\/strong><\\\\\\\/span>5039 Beckwith Blvd. #102, San Antonio, TX 78249<\\\\\\\/p><p><strong>LOCAL PHONE :&nbsp;<\\\\\\\/strong><a href=\\\\\\\"tel:2106940881\\\\\\\">(210) 694-0881<\\\\\\\/a><\\\\\\\/p><p><strong>TOLL FREE :&nbsp;<\\\\\\\/strong><a href=\\\\\\\"tel:8774431951\\\\\\\">(877) 443-1951<\\\\\\\/a><\\\\\\\/p><p><strong>EMAIL :&nbsp;<\\\\\\\/strong><a href=\\\\\\\"mailto:goodsports@goodsports.com\\\\\\\">goodsports@goodsports.com<\\\\\\\/a><\\\\\\\/p>\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_ZVdXMXgxNjYwMDU2MDA3NjU3_07658\",\"class_name\":\"\",\"type\":\"paragraph\",\"visibility\":\"\",\"sort_order\":120,\"parent_id\":45,\"storeview_visibility\":0},{\"entity_id\":64437,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"borderBottomWidth\\\":\\\"0px\\\",\\\"borderColor\\\":\\\"#eee\\\",\\\"borderWidth\\\":\\\"1px\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"lineHeight\\\":\\\"18px\\\",\\\"fontFamily\\\":\\\"roboto\\\"}\",\"data\":\"{\\\"paragraphContent\\\":\\\"<p><span style=\\\\\\\"font-size: 16px;\\\\\\\"><strong>Store Hours <\\\\\\\/strong><\\\\\\\/span><\\\\\\\/p>\\\\n<p>Monday - Friday: 9am - 6pm<\\\\\\\/p>\\\\n<p>Saturday: 9am - 6pm<\\\\\\\/p>\\\\n<p>Sunday: 12pm - 5pm<\\\\\\\/p>\\\\n\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_aDB4ZjQxNjM4OTMzMDc3OTI0_77924\",\"class_name\":\"\",\"type\":\"paragraph\",\"visibility\":\"\",\"sort_order\":130,\"parent_id\":44,\"storeview_visibility\":0},{\"entity_id\":50,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"borderBottomWidth\\\":\\\"0px\\\",\\\"borderColor\\\":\\\"#eee\\\",\\\"borderWidth\\\":\\\"1px\\\",\\\"borderStyle\\\":\\\"solid\\\",\\\"borderTopWidth\\\":\\\"0px\\\",\\\"borderLeftWidth\\\":\\\"0px\\\",\\\"borderRightWidth\\\":\\\"0px\\\",\\\"lineHeight\\\":\\\"18px\\\",\\\"fontFamily\\\":\\\"roboto\\\"}\",\"data\":\"{\\\"paragraphContent\\\":\\\"<p><span style=\\\\\\\"font-size: 16px;\\\\\\\"><strong>Store Hours <\\\\\\\/strong><\\\\\\\/span><\\\\\\\/p>\\\\n<p>Monday - Friday: 10am - 5pm<\\\\\\\/p>\\\\n<p>Saturday: 10am - 4pm<br><br><\\\\\\\/p>\\\\n\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_aDB4ZjQxNjM4OTMzMDc3OTI0_77924\",\"class_name\":\"\",\"type\":\"paragraph\",\"visibility\":\"\",\"sort_order\":140,\"parent_id\":45,\"storeview_visibility\":0},{\"entity_id\":51,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"textAlign\\\":\\\"center\\\"}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_enp5bzgxNjYwMDU2MTQzMzM3_43337\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":150,\"parent_id\":44,\"storeview_visibility\":0},{\"entity_id\":64447,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"textAlign\\\":\\\"center\\\"}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_VVA2VUYxNjM5MDQ0MjgxMjA2_81206\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":160,\"parent_id\":45,\"storeview_visibility\":0},{\"entity_id\":61,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"lineHeight\\\":\\\"2em\\\",\\\"fontFamily\\\":\\\"roboto\\\",\\\"paddingLeft\\\":15,\\\"paddingRight\\\":15,\\\"maxWidth\\\":\\\"1000px\\\"}\",\"data\":\"{\\\"paragraphContent\\\":\\\"<p style=\\\\\\\"text-align:center;\\\\\\\"><span style=\\\\\\\"color: rgb(255,255,255);font-size: 24px;\\\\\\\"><strong>We'd love to hear from you!<\\\\\\\/strong><\\\\\\\/span><br><span style=\\\\\\\"color: rgb(255,255,255);font-size: 18px;\\\\\\\">Give us a call, send us an email or visit our stores. Our friendly team will be happy to help.<\\\\\\\/span><\\\\\\\/p>\\\\n<p style=\\\\\\\"text-align:center;\\\\\\\"><span style=\\\\\\\"color: rgb(255,255,255);font-size: 24px;\\\\\\\">1 877 443-1951<\\\\\\\/span><br><span style=\\\\\\\"color: rgb(255,255,255);font-size: 18px;\\\\\\\">Online ordering &amp; product questions<\\\\\\\/span><\\\\\\\/p>\\\\n\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_Vko3ZUYxNjYwMDU4MDQ0MDcy_44072\",\"class_name\":\"\",\"type\":\"paragraph\",\"visibility\":\"\",\"sort_order\":170,\"parent_id\":5,\"storeview_visibility\":0},{\"entity_id\":62,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100,\\\"heightPixel\\\":100,\\\"minHeight\\\":\\\"300px\\\"}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060560242\\\\\\\/20190903185242.jpg\\\"}\",\"name\":\"First Image\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":180,\"parent_id\":3,\"storeview_visibility\":0},{\"entity_id\":63,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060874324\\\\\\\/winter.jpg\\\"}\",\"name\":\"Second Image\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":190,\"parent_id\":3,\"storeview_visibility\":0},{\"entity_id\":64,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060903115\\\\\\\/stuff.jpg\\\"}\",\"name\":\"Slide3\",\"tag_id\":\"pbi_YW9DRWExNjYwMDU4OTAzMDA1_03005\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":200,\"parent_id\":3,\"storeview_visibility\":0},{\"entity_id\":25,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100,\\\"heightPixel\\\":\\\"350\\\"}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060886974\\\\\\\/hunt.jpg\\\"}\",\"name\":\"Slide4\",\"tag_id\":\"pbi_Q2NaQUYxNjYwMDYwOTQ3NzEz_47713\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":210,\"parent_id\":3,\"storeview_visibility\":0},{\"entity_id\":26,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060598404\\\\\\\/outlet.jpg\\\"}\",\"name\":\"First Image\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":220,\"parent_id\":4,\"storeview_visibility\":0},{\"entity_id\":27,\"page_id\":\"9750\",\"status\":1,\"styles\":null,\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060828044\\\\\\\/outlet1.jpg\\\"}\",\"name\":\"Second Image\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":230,\"parent_id\":4,\"storeview_visibility\":0},{\"entity_id\":28,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060861923\\\\\\\/outlet2.jpg\\\"}\",\"name\":\"Slide3\",\"tag_id\":\"pbi_TDY3QW8xNjYwMDYzODkzMzg4_93388\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":240,\"parent_id\":4,\"storeview_visibility\":0},{\"entity_id\":29,\"page_id\":\"9750\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"column\\\",\\\"widthPercent\\\":100}\",\"data\":\"{\\\"image\\\":\\\"https:\\\\\\\/\\\\\\\/d3lks6njuyuuik.cloudfront.net\\\\\\\/pb\\\\\\\/pub\\\\\\\/media\\\\\\\/spb\\\\\\\/usr\\\\\\\/4530\\\\\\\/oti\\\\\\\/1660060842883\\\\\\\/outlet3.jpg\\\"}\",\"name\":\"Slide4\",\"tag_id\":\"pbi_RXlYMlkxNjYwMDYzODk0MTIz_94123\",\"class_name\":\"\",\"type\":\"image\",\"visibility\":\"\",\"sort_order\":250,\"parent_id\":4,\"storeview_visibility\":0}]","updated_at":"2023-04-21 15:42:01"}
+                            });
+                        }
+                        globalThis._tpt_pbds.push(tptPBD);
+                        tptPBD();
+                        
+        function _tapita_ssr_cti(){window._tapita_ssr_ijt_obj && Object.values(window._tapita_ssr_ijt_obj||{}).forEach(function (t){t&&t()})};
+        _tapita_ssr_cti();
+        if(!globalThis._tpt_pbds){globalThis._tpt_pbds=[]};
+        globalThis._tpt_pbds.push(_tapita_ssr_cti);
+        window.addEventListener("resize", ()=>{_tapita_ssr_cti()});
+        ;
+                        var documentFragment = document.createDocumentFragment();
+                        tapitaSections.forEach(function(el){documentFragment.appendChild(el)});
+                        document.querySelector("#" + idToRender).appendChild(documentFragment);
+                        tapitaSections = null;
+                        clearInterval(injector);
+                    } else if (tapita_counter > 60) {
+                        clearInterval(injector);
+                    }
+                }, 100);
+            </script>
+        </div>
+
+        <div class="tel">
+        {% for field in content.value %}
+          {% if field.type == "product_grid" %}
+          {% render 'tapita-product-grid',
+                    product_target_ident: field.settings.product_target_ident,
+                    product_handle: field.settings.product-handle,
+                    product_handles: field.settings.product-handles,
+                    product_ident: field.settings.product_ident,
+                    product_title: field.settings.product-title,
+                    product_limit: field.settings.product-limit,
+          %}
+          {% elsif field.type == "product_scroll" %}
+          {% render 'tapita-product-list',
+                    product_target_ident: field.settings.product_target_ident,
+                    product_handle: field.settings.product-handle,
+                    product_handles: field.settings.product-handles,
+                    product_ident: field.settings.product_ident,
+                    product_title: field.settings.product-title,
+                    product_limit: field.settings.product-limit,
+          %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        

@@ -1,0 +1,668 @@
+<script>function dynamicAttach(itemId, containerId){
+    console.log(itemId, containerId)
+	var slt= '.spb-item.type_actual_statement.spb-item-id_'+itemId;
+	var targetElement = document.querySelector(slt);
+	var containerElement = document.querySelector('.'+containerId)
+	if(targetElement && containerElement && !targetElement.innerHTML.length){
+        console.log('Found container element')
+        targetElement.innerHTML = containerElement.innerHTML
+	}else if (targetElement && containerElement && targetElement.innerHTML.length){
+        console.log('Already attached', slt)
+	}
+    if(!window._tapita_ssr_ijt_obj){
+        window._tapita_ssr_ijt_obj = {}
+    }
+    window._tapita_ssr_ijt_obj[slt] = function(anything){return dynamicAttach(itemId, containerId, anything)}
+}</script>
+<script>window._issolate_tapita_hamburger = true</script>
+
+        {% assign content = page.metafields.tapita["pgt-6cb993c"] %}
+        
+                <script>
+                    function tptmakeidprv(length) {
+                        var result           = "";
+                        var characters       = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                        var charactersLength = characters.length;
+                        for ( var i = 0; i < length; i++ ) {
+                            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                        }
+                        return result;
+                    }
+                    var tptPRBId = tptmakeidprv(50);
+                    function addTapitaTMF() {
+                        var tpPBCtn = document.getElementsByClassName("smpb-container");
+                        if (tpPBCtn.length && tpPBCtn[0] && tpPBCtn[0].parentElement &&
+                            tpPBCtn[0].parentElement.parentElement && !document.getElementById(tptPRBId)) {
+                            var tptTmt = document.createElement("a");
+                            tptTmt.onclick = function() { window.location.href = 'https://apps.shopify.com/tapita-page-builder?utm_source=customer_pages&utm_medium=referral&utm_campaign=trademark'; };
+                            tptTmt.setAttribute("id", tptPRBId);
+                            tptTmt.style.margin = "10px auto";
+                            tptTmt.style.display = "block";
+                            tptTmt.style.width = "200px";
+                            tptTmt.style.zIndex = 9999999; 
+                            tptTmt.style.position = "relative"; 
+                            var tptImg = document.createElement("img");
+                            tptImg.src = "data:image/png;base64,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";
+                            tptImg.style.height = "46px";
+                            tptImg.style.width = "200px";
+                            tptTmt.appendChild(tptImg);  
+
+                            var newcssTagStyle = "#" + tptPRBId + "{display: block !important;}";
+                            var styleTag = document.createElement("style");
+                            styleTag.type = "text/css";
+                            tpPBCtn[0].appendChild(styleTag);  
+                            styleTag.appendChild(document.createTextNode(newcssTagStyle));
+                            tpPBCtn[0].parentElement.appendChild(tptTmt);  
+                        } else {
+                            window.setTimeout(addTapitaTMF, 1000);
+                        }
+                    }
+                    addTapitaTMF();
+                </script>
+            
+        <div id="tapita-page-main-content" style="min-height: 100vh; display: block">
+          <h1 class="tapita-placeholder" style="display:none;">
+            {{ page.title | escape }}
+            "", 1
+          </h1>
+        </div>
+
+        
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-3' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Order&nbsp;Details:</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_3 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_3');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-3');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_3);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-2' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-grey "><div class="col-inner "><div class="tbpad10   "><div class="ves-widget widget-html block  "><div id="widget-html17402386451661817347" class="widget-inner block-content "><p>Total&nbsp;Under&nbsp;$69</p></div></div></div></div></div></div>
+                                <script>
+                                    var timer_2 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_2');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-2');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_2);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-4' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Order&nbsp;Details:</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_4 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_4');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-4');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_4);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-8' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Order&nbsp;Details:</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_8 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_8');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-8');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_8);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-9' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Order&nbsp;Details:</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_9 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_9');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-9');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_9);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-5' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Cost
+</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_5 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_5');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-5');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_5);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-14' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Cost
+</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_14 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_14');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-14');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_14);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-15' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Cost
+</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_15 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_15');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-15');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_15);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-16' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Cost
+</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_16 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_16');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-16');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_16);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-17' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Cost
+</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_17 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_17');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-17');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_17);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-7' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Speed</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_7 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_7');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-7');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_7);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-19' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Speed</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_19 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_19');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-19');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_19);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-20' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Speed</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_20 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_20');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-20');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_20);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-22' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Speed</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_22 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_22');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-22');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_22);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-24' style='display: none'><div class=" col-lg-4 col-md-4 col-sm-6 col-xs-12 row-red  "><div class="col-inner "><div><div class="ves-widget widget-html block  "><div id="widget-html5249973121661817347" class="widget-inner block-content "><h4 style="color:#ffffff;">Shipping&nbsp;Speed</h4></div></div></div></div></div></div>
+                                <script>
+                                    var timer_24 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_24');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-24');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_24);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-75' style='display: none'><div class="center   " style="padding:0 0 20px 0"><h2 class="w_heading ">Orders placed by 2 pm CST Monday - Friday usually ship the same day.</h2></div></div>
+                                <script>
+                                    var timer_75 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_75');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-75');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_75);
+                                    }
+                                }, 300);
+                                </script>
+                            
+                                <div class='spb-customerhtml-serverrender spb-customerhtml-serverrender-6' style='display: none'><div class=" col-lg-12 col-md-4 col-sm-6 col-xs-12  "><div class="col-inner "><div><h3 class="w_heading ">Shipping Cost</h3></div></div></div></div>
+                                <script>
+                                    var timer_6 = setInterval(function () {
+                                    try{
+                                        let target_c = document.querySelector('.spb-item.spb-item-id_6');
+                                        if (target_c && !target_c.innerHTML) {
+                                            let self_c = document.getElementsByClassName('spb-customerhtml-serverrender-6');
+                                            if(self_c.length >0 ){
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                self_c[0].style.setProperty('display', 'unset');
+                                                window.tpb_srsappended_{{ident}} = self_c[0];
+                                                target_c.appendChild(self_c[0]);
+                                            } else if (window.tpb_srsappended_{{ident}}) {
+                                                target_c.style.setProperty('display', 'block')
+                                                target_c.style.setProperty('overflow', 'clip')
+                                                window.tpb_srsappended_{{ident}}.style.setProperty('display', 'unset');
+                                                target_c.appendChild(window.tpb_srsappended_{{ident}});
+                                            }
+                                        }
+                                    } catch(e) {
+                                        console.warn(e)
+                                        clearInterval(timer_6);
+                                    }
+                                }, 300);
+                                </script>
+                            
+        <div class="rte">
+            <script>
+                try {
+                    var _tpt_insigna = "0a2c784c08da4657f00b0bd1430a0364";
+                    if(!globalThis._tpt_pbds){
+                        globalThis._tpt_pbds = [];
+                    }
+                    document.querySelectorAll("meta[name='description']").forEach(function(t){t.setAttribute("data-react-helmet",true)})
+                }catch(e){
+                    console.warn(e);
+                }
+                var tapitacss = `#shopify-section-tapita-main-page, #shopify-section-tapita-main-home { min-height: 100vh; } .main.content { max-width: unset; } .spb-item-root {width: 100%;} h1.main-page-title.page-title {display: none;} .spb-item.type_text {overflow-y: hidden;} `;
+                var tapitahead = document.head || document.getElementsByTagName("head")[0];
+                var tapitastyle = document.createElement("style");
+
+                tapitastyle.type = "text/css";
+                if (tapitastyle.styleSheet){
+                    tapitastyle.styleSheet.cssText = tapitacss;
+                } else {
+                    tapitastyle.appendChild(document.createTextNode(tapitacss));
+                }
+                tapitastyle.class="tapita-custom-css";
+                 
+                var tapitajs = ``;
+                var tapitascript = document.createElement("script")
+                tapitascript.appendChild(document.createTextNode(tapitajs));
+                tapitascript.defer = true;
+                tapitascript.class="tapita-custom-css";
+
+                tapitahead.appendChild(tapitastyle);
+                tapitahead.appendChild(tapitascript);
+                
+            </script>
+            
+            {{ 'tapita-cdn-assets-1.5.6.js' | asset_url | script_tag }}
+             
+            <script defer>
+                var tapita_counter = 0;
+                var possibleMainTargetQuery = [
+                    
+                    "#tapita-page-main-content",
+                    ".normal_main_content",
+                    "#MainContent",
+                    "shopify-section-tapita-main-page",
+                    "shopify-section-tapita-main-home",
+                    "main",
+                ]
+              
+                var currentMain = null;
+                for (const selector of possibleMainTargetQuery) {
+                    currentMain = document.querySelector(selector);
+                    if(currentMain){
+                        break;
+                    }
+                }
+                var injector = setInterval(function () {
+                    var idToRender = false;
+                    var mainTarget = null;
+                    for (const selector of possibleMainTargetQuery) {
+                        mainTarget = document.querySelector(selector);
+                        if(mainTarget){
+                            break;
+                        }
+                    }
+                    if(currentMain && currentMain.id !=="MainContent"){
+                        currentMain.id = "MainContentTapita";
+                        idToRender = "MainContentTapita";
+                    }
+                    
+                    if (!idToRender)
+                        return;
+
+                    tapita_counter += 1;
+                    if (globalThis.PageBuilderComponent) {
+                        var tapitaSections = document.querySelectorAll(".tapitaSection, .spb-customerhtml-serverrender");
+                        currentMain = null;
+                        function tptPBD(){
+                            PageBuilderComponent.renderForIdWithProps(idToRender, {
+                            endPoint: "https://tapita.io/pb/graphql/",
+                            mode: "shopify",
+                            formatMessage: globalThis._rms_translate,
+                            _translateParagraph: true,
+                            _translateSEO: true,
+                            _translatePlaceholder: true,
+                            pageData: {"url_path":"\/shipping-policy","original_url_path":"\/shipping-policy","type_id":0,"priority":10,"entity_id":11251,"name":"Shipping Policy","status":1,"masked_id":"4530UAQVkHVIVepELffAgTM91661876164","custom_css":" .grow {\r\n  transition: all .5s ease-in-out;\r\n  -webkit-transition: all .5s ease-in-out;\r\n  -moz-transition: all .5s ease-in-out;\r\n  -ms-transition: all .5s ease-in-out;\r\n  -o-transition: all .5s ease-in-out;\r\n}\r\n.grow:hover {\r\n  transform: scale3d(1.1,1.1,1);\r\n  -moz-transform: scale3d(1.1,1.1,1);\r\n  -o-transform: scale3d(1.1,1.1,1);\r\n  -ms-transform: scale3d(1.1,1.1,1);\r\n  -webkit-transform: scale3d(1.1,1.1,1);\r\n  filter: brightness(0.8);\r\n}\r\n.grow-parent {\r\n  overflow: hidden;\r\n}","custom_js":null,"keywords":"Shipping Policy","title":"Shipping Policy","desc":"","is_rtl":0,"storeview_visibility":"","publish_items":"[{\"entity_id\":3,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_cVVUSUoxNjYxODc3NDcwMTE4_70118\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":20,\"parent_id\":12,\"storeview_visibility\":\"\"},{\"entity_id\":2,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_cVVUSUoxNjYxODc3NDcwMTE4_70118\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":30,\"parent_id\":34,\"storeview_visibility\":\"\"},{\"entity_id\":4,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_cVVUSUoxNjYxODc3NDcwMTE4_70118\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":40,\"parent_id\":35,\"storeview_visibility\":\"\"},{\"entity_id\":8,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_cVVUSUoxNjYxODc3NDcwMTE4_70118\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":50,\"parent_id\":36,\"storeview_visibility\":\"\"},{\"entity_id\":9,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_cVVUSUoxNjYxODc3NDcwMTE4_70118\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":60,\"parent_id\":37,\"storeview_visibility\":\"\"},{\"entity_id\":5,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":70,\"parent_id\":21,\"storeview_visibility\":\"\"},{\"entity_id\":14,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":80,\"parent_id\":39,\"storeview_visibility\":\"\"},{\"entity_id\":15,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":90,\"parent_id\":40,\"storeview_visibility\":\"\"},{\"entity_id\":16,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":100,\"parent_id\":41,\"storeview_visibility\":\"\"},{\"entity_id\":17,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":110,\"parent_id\":42,\"storeview_visibility\":\"\"},{\"entity_id\":7,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":120,\"parent_id\":23,\"storeview_visibility\":\"\"},{\"entity_id\":19,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":130,\"parent_id\":44,\"storeview_visibility\":\"\"},{\"entity_id\":20,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":140,\"parent_id\":45,\"storeview_visibility\":\"\"},{\"entity_id\":22,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":150,\"parent_id\":46,\"storeview_visibility\":\"\"},{\"entity_id\":24,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"paddingBottom\\\":15,\\\"paddingTop\\\":15}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_RThGMmwxNjYxODc3MzIxNzU2_21756\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":160,\"parent_id\":47,\"storeview_visibility\":\"\"},{\"entity_id\":75,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\",\\\"textAlign\\\":\\\"center\\\"}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_YlVsV1gxNjYxODc2MjU1MTA0_55104\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":170,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":13,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"lineHeight\\\":\\\"2em\\\",\\\"fontFamily\\\":\\\"roboto\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{\\\"paragraphContent\\\":\\\"<p><span style=\\\\\\\"font-size: 16px;\\\\\\\">Need something expedited (Overnight or 2-Day Air)?<br>Call us at (877) 443-1951 or start a chat (bottom right of screen)<br>We can check on estimated delivery times and any additional cost you may incur.<br>Customer service hours: Monday-Friday: 9 am - 4:30 pm, Saturday: 10 am - 1 pm, Closed Sunday<\\\\\\\/span><\\\\\\\/p>\\\\n\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_Q252SHkxNjYxODc3NjA2NDA1_06405\",\"class_name\":\"\",\"type\":\"paragraph\",\"visibility\":\"\",\"sort_order\":180,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":6,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"widthPercent\\\":100,\\\"maxWidth\\\":\\\"1280px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{\\\"htmlContent\\\":\\\"\\\"}\",\"name\":\"\",\"tag_id\":\"pbi_MnVsdmsxNjYxODc2NDY0NzQ5_64749\",\"class_name\":\"\",\"type\":\"custom_html\",\"visibility\":\"\",\"sort_order\":190,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":11,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":0,\\\"paddingBottom\\\":0,\\\"paddingLeft\\\":0,\\\"paddingRight\\\":0,\\\"justifyContent\\\":\\\"center\\\",\\\"display\\\":\\\"grid\\\",\\\"columnGap\\\":\\\"1px\\\",\\\"rowGap\\\":\\\"0px\\\",\\\"gridTemplateColumns\\\":\\\"1fr 1fr 1fr\\\",\\\"m_gridTemplateColumns\\\":\\\"1fr\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"t_maxWidth\\\":\\\"1024px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_SHowZXExNjYxODc2NTQ5OTI5_49929\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":200,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":29,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":0,\\\"paddingBottom\\\":0,\\\"paddingLeft\\\":0,\\\"paddingRight\\\":0,\\\"justifyContent\\\":\\\"center\\\",\\\"display\\\":\\\"grid\\\",\\\"columnGap\\\":\\\"1px\\\",\\\"rowGap\\\":\\\"0px\\\",\\\"gridTemplateColumns\\\":\\\"1fr 1fr 1fr\\\",\\\"m_gridTemplateColumns\\\":\\\"1fr\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"t_maxWidth\\\":\\\"1024px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_Q1ptOWwxNjYxODc3ODA2MjUy_06252\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":210,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":30,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":0,\\\"paddingBottom\\\":0,\\\"paddingLeft\\\":0,\\\"paddingRight\\\":0,\\\"justifyContent\\\":\\\"center\\\",\\\"display\\\":\\\"grid\\\",\\\"columnGap\\\":\\\"1px\\\",\\\"rowGap\\\":\\\"0px\\\",\\\"gridTemplateColumns\\\":\\\"1fr 1fr 1fr\\\",\\\"m_gridTemplateColumns\\\":\\\"1fr\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"t_maxWidth\\\":\\\"1024px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_N2FXTGExNjYxODc3ODA1Njky_05692\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":220,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":31,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":0,\\\"paddingBottom\\\":0,\\\"paddingLeft\\\":0,\\\"paddingRight\\\":0,\\\"justifyContent\\\":\\\"center\\\",\\\"display\\\":\\\"grid\\\",\\\"columnGap\\\":\\\"1px\\\",\\\"rowGap\\\":\\\"0px\\\",\\\"gridTemplateColumns\\\":\\\"1fr 1fr 1fr\\\",\\\"m_gridTemplateColumns\\\":\\\"1fr\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"t_maxWidth\\\":\\\"1024px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_UUdaVjUxNjYxODc3ODA0OTg4_04988\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":230,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":32,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"flexDirection\\\":\\\"row\\\",\\\"widthPercent\\\":100,\\\"flexShrink\\\":1,\\\"paddingTop\\\":0,\\\"paddingBottom\\\":0,\\\"paddingLeft\\\":0,\\\"paddingRight\\\":0,\\\"justifyContent\\\":\\\"center\\\",\\\"display\\\":\\\"grid\\\",\\\"columnGap\\\":\\\"1px\\\",\\\"rowGap\\\":\\\"0px\\\",\\\"gridTemplateColumns\\\":\\\"1fr 1fr 1fr\\\",\\\"m_gridTemplateColumns\\\":\\\"1fr\\\",\\\"maxWidth\\\":\\\"1280px\\\",\\\"t_maxWidth\\\":\\\"1024px\\\",\\\"marginLeft\\\":\\\"auto\\\",\\\"marginRight\\\":\\\"auto\\\"}\",\"data\":\"{}\",\"name\":\"\",\"tag_id\":\"pbi_UmdJMlQxNjYxODc3ODAzMzg4_03389\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":240,\"parent_id\":0,\"storeview_visibility\":\"\"},{\"entity_id\":12,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\",\\\"flexWrap\\\":\\\"wrap\\\",\\\"flexDirection\\\":\\\"row\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":250,\"parent_id\":11,\"storeview_visibility\":\"\"},{\"entity_id\":34,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#f4f4f4\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":260,\"parent_id\":29,\"storeview_visibility\":\"\"},{\"entity_id\":35,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":270,\"parent_id\":30,\"storeview_visibility\":\"\"},{\"entity_id\":36,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":280,\"parent_id\":31,\"storeview_visibility\":\"\"},{\"entity_id\":37,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":290,\"parent_id\":32,\"storeview_visibility\":\"\"},{\"entity_id\":21,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_MnczN0cxNjYxODc3MzA2OTAw_06900\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":300,\"parent_id\":11,\"storeview_visibility\":\"\"},{\"entity_id\":39,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_MnczN0cxNjYxODc3MzA2OTAw_06900\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":310,\"parent_id\":29,\"storeview_visibility\":\"\"},{\"entity_id\":40,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_MnczN0cxNjYxODc3MzA2OTAw_06900\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":320,\"parent_id\":30,\"storeview_visibility\":\"\"},{\"entity_id\":41,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_MnczN0cxNjYxODc3MzA2OTAw_06900\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":330,\"parent_id\":31,\"storeview_visibility\":\"\"},{\"entity_id\":42,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_MnczN0cxNjYxODc3MzA2OTAw_06900\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":340,\"parent_id\":32,\"storeview_visibility\":\"\"},{\"entity_id\":23,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_Y0FLTjkxNjYxODc3MzMyMzE2_32316\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":350,\"parent_id\":11,\"storeview_visibility\":\"\"},{\"entity_id\":44,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_Y0FLTjkxNjYxODc3MzMyMzE2_32316\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":360,\"parent_id\":29,\"storeview_visibility\":\"\"},{\"entity_id\":45,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_Y0FLTjkxNjYxODc3MzMyMzE2_32316\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":370,\"parent_id\":30,\"storeview_visibility\":\"\"},{\"entity_id\":46,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_Y0FLTjkxNjYxODc3MzMyMzE2_32316\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":380,\"parent_id\":31,\"storeview_visibility\":\"\"},{\"entity_id\":47,\"page_id\":\"11251\",\"status\":1,\"styles\":\"{\\\"padding\\\":\\\"15px\\\",\\\"width\\\":\\\"100%\\\",\\\"minHeight\\\":\\\"60px\\\",\\\"backgroundColor\\\":\\\"#ef676d\\\",\\\"paddingRight\\\":0,\\\"paddingLeft\\\":0,\\\"paddingBottom\\\":0,\\\"paddingTop\\\":0,\\\"heightPixel\\\":60,\\\"maxHeight\\\":\\\"60px\\\"}\",\"data\":null,\"name\":\"\",\"tag_id\":\"pbi_Y0FLTjkxNjYxODc3MzMyMzE2_32316\",\"class_name\":\"\",\"type\":\"container\",\"visibility\":\"\",\"sort_order\":390,\"parent_id\":32,\"storeview_visibility\":\"\"}]","updated_at":"2022-08-30 17:31:28"}
+                            });
+                        }
+                        globalThis._tpt_pbds.push(tptPBD);
+                        tptPBD();
+                        
+                        
+        function _tapita_ssr_cti(){Object.values(window._tapita_ssr_ijt_obj||{}).forEach(function (t){t&&t()})};
+        _tapita_ssr_cti();
+        if(!globalThis._tpt_pbds){globalThis._tpt_pbds=[]};
+        globalThis._tpt_pbds.push(_tapita_ssr_cti);
+        window.addEventListener("resize", ()=>{_tapita_ssr_cti()});
+        
+                        document.querySelector("#" + idToRender).style.setProperty("padding-top", "10px");
+                        var documentFragment = document.createDocumentFragment();
+                        tapitaSections.forEach(function(el){documentFragment.appendChild(el)});
+                        document.querySelector("#" + idToRender).appendChild(documentFragment);
+                        tapitaSections = null;
+                        clearInterval(injector);
+                    } else if (tapita_counter > 30) {
+                        clearInterval(injector);
+                    }
+                }, 100);
+            </script>
+        </div>
+
+        <div class="tel">
+        {% for field in content.value %}
+          {% if field.type == "product_grid" %}
+          {% render 'tapita-product-grid',
+                    product_target_ident: field.settings.product_target_ident,
+                    product_handle: field.settings.product-handle,
+                    product_handles: field.settings.product-handles,
+                    product_ident: field.settings.product_ident,
+                    product_title: field.settings.product-title,
+                    product_limit: field.settings.product-limit,
+          %}
+          {% elsif field.type == "product_scroll" %}
+          {% render 'tapita-product-list',
+                    product_target_ident: field.settings.product_target_ident,
+                    product_handle: field.settings.product-handle,
+                    product_handles: field.settings.product-handles,
+                    product_ident: field.settings.product_ident,
+                    product_title: field.settings.product-title,
+                    product_limit: field.settings.product-limit,
+          %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        

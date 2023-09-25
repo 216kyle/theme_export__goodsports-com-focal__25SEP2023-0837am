@@ -1,0 +1,247 @@
+{%- if section.settings.background_type == 'boxed' -%}
+  {%- assign is_boxed = true -%}
+{%- else -%}
+  {%- assign is_boxed = false -%}
+{%- endif -%}
+
+<style>
+  {%- assign logo_position = section.settings.logo_position | split: '_' | first -%}
+
+  {%- case logo_position -%}
+    {%- when 'top' -%}
+      {%- assign section_items_alignment = 'flex-start' -%}
+    {%- when 'middle' -%}
+      {%- assign section_items_alignment = 'center' -%}
+    {%- when 'bottom' -%}
+      {%- assign section_items_alignment = 'flex-end' -%}
+  {%- endcase -%}
+
+  #shopify-section-{{ section.id }} {
+
+    --section-items-alignment: {{ section_items_alignment }};
+    --section-overlay-color: {{ section.settings.overlay_color.red }}, {{ section.settings.overlay_color.green }}, {{ section.settings.overlay_color.blue }};
+    --section-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+  }
+</style>
+
+<section class="section {% unless is_boxed %}section--flush{% endunless %}">
+  <div
+    {% if is_boxed %}
+      class="container"
+    {% endif %}
+  >
+    {%- assign image = section.settings.image -%}
+    {%- assign image_aspect_ratio = image.aspect_ratio | default: 2.63 -%}
+
+    <image-with-logo-overlay
+      {% if section.settings.reveal_on_scroll %}
+        reveal-on-scroll
+      {% endif %}
+      class="image-overlay image-overlay--{{ section.settings.section_height }}"
+      {% if section.settings.section_height == 'auto' %}
+        style="--image-aspect-ratio: {{ image_aspect_ratio }}"
+      {% endif %}
+    >
+      <div
+        class="image-overlay__image-wrapper"
+        {% if section.settings.section_height == 'auto' %}
+          style="padding-bottom: {{ 100.0 | divided_by: image_aspect_ratio }}%"
+        {% endif %}
+      >
+        {%- if image != blank -%}
+          <img
+            class="image-overlay__image"
+            loading="lazy"
+            {% if section.settings.reveal_on_scroll %}
+              reveal
+            {% endif %}
+            {% render 'image-attributes',
+              image: image,
+              sizes: '600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000'
+            %}
+          >
+        {%- else -%}
+          {%- capture image_classes -%}image-overlay__image image-overlay__image--placeholder image-overlay__image--{{ section.settings.section_height }}{%- endcapture -%}
+
+          {%- if section.settings.reveal_on_scroll -%}
+            {{- 'lifestyle-1' | placeholder_svg_tag: image_classes | replace: '<svg', '<svg reveal' -}}
+          {%- else -%}
+            {{- 'lifestyle-1' | placeholder_svg_tag: image_classes -}}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+
+      {%- capture section_content -%}
+        {%- assign logo_alignment = section.settings.logo_position | split: '_' | last -%}
+
+        <div class="image-overlay__content-wrapper">
+          {%- assign logo = section.settings.logo -%}
+          {%- assign logo_aspect_ratio = logo.aspect_ratio | default: 2.63 -%}
+          <div class="image-overlay__content content-box content-box--text-{{ logo_alignment }} content-box--{{ logo_alignment }} logo_container">
+            {%- if logo != blank -%}
+              <img
+                loading="lazy"
+                {% if section.settings.reveal_on_scroll %}
+                  reveal
+                {% endif %}
+                {% render 'image-attributes',
+                  image: logo,
+                  sizes: '100,150,200,250,300,350,400,450'
+                %}
+              >
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endcapture -%}
+
+      <div
+        {% if is_boxed %}
+          style="width: 100%"
+        {% else %}
+          class="container"
+        {% endif %}
+      >
+        {{- section_content -}}
+      </div>
+    </image-with-logo-overlay>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with logo overlay",
+  "class": "shopify-section--image-with-logo-overlay",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "reveal_on_scroll",
+      "label": "Reveal on scroll",
+      "info": "Show animation when section becomes visible.",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "Section height",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Original image ratio"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "info": "Choose \"Original image ratio\" to not cut images. [Learn more](https://help.shopify.com/en/manual/online-store/images/theme-images#best-practices-for-slideshows-and-full-width-images)",
+      "default": "auto"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "2000 x 980px .jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info" : "450 x 150px .png recommended"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Background",
+      "options": [
+        {
+          "value": "full_width",
+          "label": "Full width"
+        },
+        {
+          "value": "boxed",
+          "label": "Boxed"
+        }
+      ],
+      "default": "full_width"
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Logo position",
+      "options": [
+        {
+          "value": "top_left",
+          "label": "Top left"
+        },
+        {
+          "value": "top_center",
+          "label": "Top center"
+        },
+        {
+          "value": "top_right",
+          "label": "Top right"
+        },
+        {
+          "value": "middle_left",
+          "label": "Middle left"
+        },
+        {
+          "value": "middle_center",
+          "label": "Middle center"
+        },
+        {
+          "value": "middle_right",
+          "label": "Middle right"
+        },
+        {
+          "value": "bottom_left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom_center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom_right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "middle_center"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with logo overlay",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
